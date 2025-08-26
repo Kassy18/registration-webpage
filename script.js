@@ -73,7 +73,4 @@ inner.addEventListener("click", (event) => {
   messageLog.innerHTML += "Button Clicked (capturing)<br>";
 });
 
-// Event Handling (Capturing)
-outer.addEventListener("click", () => {
-  messageLog.innerHTML = "Div Clicked (capturing)<br>";
-}, { capture: true });
+
