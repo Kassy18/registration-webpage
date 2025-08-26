@@ -58,27 +58,22 @@ document.getElementById("password").addEventListener("input", () => {
 
 
 const outer = document.getElementById("outer");
-
 const inner = document.getElementById("inner");
-
-const log = document.getElementById("log");
+const messageLog = document.getElementById("messageLog");
 
 // Event Handling (Bubbling)
 outer.addEventListener("click", () => {
-  log.innerHTML += "Div Clicked <br>";
+  messageLog.innerHTML = "Div Clicked (bubbling)<br>";
+  messageLog.innerHTML += "Div Clicked (capturing)<br>";
 });
 
 inner.addEventListener("click", (event) => {
   event.stopPropagation();
-  log.innerHTML += "Button Clicked <br>";
+  messageLog.innerHTML = "Button Clicked (bubbling)<br>";
+  messageLog.innerHTML += "Button Clicked (capturing)<br>";
 });
 
 // Event Handling (Capturing)
 outer.addEventListener("click", () => {
-  log.innerHTML += "Div Clicked (capturing)<br>";
-}, { capture: true });
-
-inner.addEventListener("click", (event) => {
-  event.stopPropagation();
-  log.innerHTML += "Button Clicked (capturing)<br>";
+  messageLog.innerHTML = "Div Clicked (capturing)<br>";
 }, { capture: true });
