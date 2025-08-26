@@ -72,3 +72,13 @@ inner.addEventListener("click", (event) => {
   event.stopPropagation();
   log.innerHTML += "Button Clicked <br>";
 });
+
+// Event Handling (Capturing)
+outer.addEventListener("click", () => {
+  log.innerHTML += "Div Clicked (capturing)<br>";
+}, { capture: true });
+
+inner.addEventListener("click", (event) => {
+  event.stopPropagation();
+  log.innerHTML += "Button Clicked (capturing)<br>";
+}, { capture: true });
