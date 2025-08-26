@@ -65,9 +65,9 @@ const log = document.getElementById("log");
 
 // Bubbling 
 outer.addEventListener("click", () => {
-  log.innerHTML += "Div Clicked (bubbling)<br>";
+  log.innerHTML += "Div Clicked <br>";
 });
 
 inner.addEventListener("click", () => {
-  log.innerHTML += "Button Clicked (bubbling)<br>";
+  log.innerHTML += "Button Clicked <br>";
 });
