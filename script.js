@@ -63,11 +63,12 @@ const inner = document.getElementById("inner");
 
 const log = document.getElementById("log");
 
-// Bubbling 
+// Event Handling (Bubbling)
 outer.addEventListener("click", () => {
   log.innerHTML += "Div Clicked <br>";
 });
 
-inner.addEventListener("click", () => {
+inner.addEventListener("click", (event) => {
+  event.stopPropagation();
   log.innerHTML += "Button Clicked <br>";
 });
